@@ -1,4 +1,5 @@
 from manejo import manejo
+from manejo.DeveloperFunctions import CrearUsuario
 from modelo import clases
 
 biblioteca = clases.Biblioteca()
@@ -27,5 +28,10 @@ while True:
     elif opcion == "8":
         print("Gracias por usar el programa")
         quit()
+    elif opcion == "9": #Crear usuarios de ejemplo
+        CrearUsuario(biblioteca, 1 , "Nelson", "estudiante")
+        CrearUsuario(biblioteca, 2 , "Davinson", "profesor")
+        CrearUsuario(biblioteca, 3 , "Jimmy", "administrativo")
+        manejo.listarPersonas(biblioteca)
     else:
         print("Ingrese una opción valida")

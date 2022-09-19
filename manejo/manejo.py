@@ -1,6 +1,4 @@
-from pickle import TRUE
 from modelo import clases
-from manejo import DeveloperFunctions
 from datetime import date
 
 def buscarIdentificadorEnBiblioteca(biblioteca,identificador):
