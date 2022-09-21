@@ -22,7 +22,6 @@ class Material:
     self._titulo=titulo
     self._fechaRegistro=fechaRegistro
     self._cantidadRegistrada=cantidadRegistrada
-    self._cantidadACtual=cantidadActual
     self._cantidadActual=cantidadActual
   def getIdentificador(self):
     return self._identificador

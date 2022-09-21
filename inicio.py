@@ -1,5 +1,5 @@
 from manejo import manejo
-from manejo.DeveloperFunctions import CrearUsuario
+from manejo import DeveloperFunctions as df
 from modelo import clases
 
 biblioteca = clases.Biblioteca()
@@ -29,9 +29,16 @@ while True:
         print("Gracias por usar el programa")
         quit()
     elif opcion == "9": #Crear usuarios de ejemplo
-        CrearUsuario(biblioteca, 1 , "Nelson", "estudiante")
-        CrearUsuario(biblioteca, 2 , "Davinson", "profesor")
-        CrearUsuario(biblioteca, 3 , "Jimmy", "administrativo")
+        df.CrearUsuario(biblioteca, 1 , "Nelson", "estudiante")
+        df.CrearUsuario(biblioteca, 2 , "Davinson", "profesor")
+        df.CrearUsuario(biblioteca, 3 , "Jimmy", "administrativo")
+        manejo.listarPersonas(biblioteca)
+    elif opcion == "10":    #Crear materiales de ejemplo
+        df.CrearMaterial(biblioteca, 111, "Cien años de soledad", 10)
+        df.CrearMaterial(biblioteca, 222, "El señor de los anillos", 15)
+        df.CrearMaterial(biblioteca, 333, "El Quijote de La Mancha", 20)
+    elif opcion == "11":
+        manejo.listarCatalogo(biblioteca)
         manejo.listarPersonas(biblioteca)
     else:
         print("Ingrese una opción valida")
