@@ -49,7 +49,7 @@ class Persona:
     self._nombre=nombre
     self._cedula=cedula
     self._rol=rol
-    self._librosPrestados=librosPrestados
+    self._librosPrestados=[]
   def getNombre(self):
     return self._nombre
   def setNombre(self, nombre):
