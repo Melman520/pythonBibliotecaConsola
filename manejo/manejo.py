@@ -71,12 +71,12 @@ def registrarPersonaEnBiblioteca(biblioteca):
     else:
       nombre = input("Ingrese el nombre: ")
       while True:
-        rol = input("Ingrese el rol Estudiante, Profesor o Administrativo: ")
-        if rol.lower() != "estudiante" and rol.lower() != "profesor" and rol.lower() != "administrativo":
+        rol = input("Ingrese el rol Estudiante, Profesor o Administrativo: ").lower()
+        if rol != "estudiante" and rol != "profesor" and rol != "administrativo":
           print("ingrese un rol valido")
         else:
           break
-      persona = clases.Persona(nombre, cedula, rol, 0)
+      persona = clases.Persona(nombre, cedula, rol, "")
       biblioteca.getUsuarios().append(persona)
   except:
     print("Cedula invalida, volviendo al menu inicial...")
@@ -88,7 +88,7 @@ def eliminarPersona(biblioteca):
     for persona in biblioteca.getUsuarios():
       if persona.getCedula()==cedula:
         encontrado = True
-        if persona.getLibrosPrestados == 0:
+        if len(persona.getLibrosPrestados()) == 0:
           biblioteca.getUsuarios().remove(persona)
           print("Persona borrada exitosamente")
         else:
@@ -97,7 +97,7 @@ def eliminarPersona(biblioteca):
     if encontrado == False:
       print("No se encontró ninguna persona con esa cedula")
   except:
-    print("Cedula invalida, volviendo al menu inicial...")
+    print("Cedula invalida, volviendo al menu inicial...2")
 
 def validarRol(biblioteca,persona, df):
   if persona.getRol() == "profesor" and df == "prestamo":
@@ -131,7 +131,6 @@ def validarUsuario(biblioteca,df):
         encontrado = True
     if encontrado == False:
         print("usuario no registrado")
-  
 
 
 
