@@ -25,7 +25,6 @@ def listarRegistro(biblioteca):
   for registro in biblioteca.getHistorial():
       print("identificador del material:" , registro.getIdentificador() , "- Nombre de la persona:" , registro.getNombre() , "- Cedula de la persona:" , registro.getCedula() , "- Estado:" , registro.getEstado() , "- Fecha:" , registro.getFecha())
 
-
 def aumentarunidades(biblioteca):
   encontrado = False
   try:
@@ -121,7 +120,6 @@ def validarRol(biblioteca,persona, df):
   if df == "devolucion":
     devolucion(biblioteca, persona)
 
-
 def validarUsuario(biblioteca,df):
     encontrado = False
     cedula = int(input("Ingrese su cedula de usuario registrado: "))
@@ -131,8 +129,6 @@ def validarUsuario(biblioteca,df):
         encontrado = True
     if encontrado == False:
         print("usuario no registrado")
-
-
 
 def devolucion(biblioteca, persona):
   encontrado = False
@@ -156,7 +152,6 @@ def devolucion(biblioteca, persona):
   if encontrado == False:
     print("Ese material no se encuentra registrado en el catalogo")
 
-
 def prestamo(biblioteca, persona):
   encontrado = False
   cedula = persona.getCedula()
@@ -174,7 +169,6 @@ def prestamo(biblioteca, persona):
         print("Lo sentimos, ya no queda de ese material")
   if encontrado == False:
     print("No se encontró ningun material con ese identificador")
-
 
 def guardarRegistro(biblioteca, identificador, estado, nombre, cedula):
   fecha = date.today()
