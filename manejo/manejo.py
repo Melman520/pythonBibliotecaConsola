@@ -144,7 +144,7 @@ def devolucion(biblioteca, persona):
           persona.getLibrosPrestados().remove(identificador)
           material.setCantidadActual(material.getCantidadActual()+1)
           print("Material devuelto exitosamente")
-          guardarRegistro(biblioteca, identificador, "Devuleto",nombre, cedula)
+          guardarRegistro(biblioteca, identificador, "Devuelto",nombre, cedula)
         except: 
           print("No tiene ese material prestado")
       else:
@@ -167,6 +167,7 @@ def prestamo(biblioteca, persona):
         encontrado = True
       else:
         print("Lo sentimos, ya no queda de ese material")
+        encontrado = True
   if encontrado == False:
     print("No se encontró ningun material con ese identificador")
 
